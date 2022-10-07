@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    /*Colors*/
+    /*Primary*/
+    --orange: hsl(25, 97%, 53%);
+    /*Neutral*/
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+
+}
+body{
+    min-height: 100vh;
+}
+body{
+    font-family: 'Overpass', sans-serif;
+    background-color: var(--very-dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rating-component-container{
+    width: 370px;
+    height: 375px;
+    padding: 30px;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(1fr, 5);
+    background-color: var(--dark-blue);
+    border-radius: 2em;
+}
+.icon-container{
+    position: relative;
+    width: 43px;
+    height: 43px;
+}
+img{
+    width: inherit;
+    height: inherit;
+    padding: 0.9rem;
+}
+.circle{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--light-grey);
+    z-index: 0;
+    opacity: 0.2;
+    border-radius: 50%;
+}
+.rating{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+.rating li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    list-style: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.rating li:hover, li:hover .circle + span  {
+    background-color: var(--orange);
+    color: var(--white);
+}
+span{
+    position: absolute;
+    z-index: 1;
+    font-weight: 700;
+    color: var(--medium-grey);
+}
+.title{
+    font-size: 1.5em;
+    font-weight: 400;
+    color: var(--white);
+}
+.text{
+    font-size: 14px;
+    font-weight: 500;
+    text-align: start;
+    line-height: 1.5em;
+    color: var(--medium-grey);
+}
+button{
+    background-color: var(--orange);
+    outline: none;
+    border: none;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--white);
+    border-radius: 2em;
+    transition: background-color 200ms ease-out;
+}
+button:hover{
+    cursor: pointer;
+    background-color: var(--white);
+    color: var(--orange);
+    font-weight: 700;
+}
+.clicked{
+    color: var(--white);
+    background-color: var(--light-grey);
+}
+.color-txt-clicked{
+    color: var(--white);
+}
+/*Thanks*/
+.rating-component-container-results{
+    width: 370px;
+    height: 375px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat( 1fr, 3 );
+    gap: 1rem;
+    background-color: var(--dark-blue);
+    border-radius: 2em;
+    text-align: center;
+}
+.results-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+.results-container img{
+    background-size: cover;
+    height: auto;
+    width: 180px;
+    align-self: center;
+    justify-self: center;
+}
+.rating-message{
+    align-self: center;
+    width: 11em;
+    padding: 0.5em 2em;
+    color: var(--orange);
+    border-radius: 2em;
+    position: relative;
+    display: flex;
+    justify-content: center;    
+}
+.rating-message p{
+    font-size: 0.9em;
+    position: absolute;
+    z-index: 1;
+    margin: 0;
+}
+.rating-message .container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--light-grey);
+    z-index: 0;
+    height: 2em;
+    border-radius: 2em;
+    opacity: 0.1;
+}
+.container-message{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+.container-message h1{
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--white);
+}
+.container-message p {
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 14px;
+    line-height: 1.6em;
+    color: var(--light-grey);
+}
+/*Mobile*/
+@media (max-width: 575.98px) {
+    .rating-component-container,.rating-component-container-results{
+        width: 330px;
+        height: 360px;
+    }
+
+}
